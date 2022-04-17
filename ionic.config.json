@@ -1,0 +1,7 @@
+{
+  "name": "e.s.duoc_app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
