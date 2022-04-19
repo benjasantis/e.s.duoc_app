@@ -1,9 +1,44 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>recuperar</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="end">E.S.D.A</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <h1 class="ion-text-center">Recuperar Contraseña</h1>
+
+  <div class="icono">
+    <ion-icon size="large" name="person-remove-sharp"></ion-icon>
+  </div>
+
+  <br><br><br><br><br>
+
+  <ion-card>
+    <ion-item>
+      <ion-label position="floating" class="ion-text-center">Rut</ion-label>
+      <ion-input class="ion-text-center"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" class="ion-text-center">Email</ion-label>
+      <ion-input class="ion-text-center"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" class="ion-text-center">Nueva Password</ion-label>
+      <ion-input class="ion-text-center"></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <br><br><br>
+
+  <div class="boton">
+    <ion-button (click)="presentAlert()" routerLink="/login" color="primary" expand="medium">Recuperar</ion-button>
+  </div>
+  <div class="boton" >
+    <ion-button class="boton-cancelar" color="warning" routerLink="Login" >Cancelar</ion-button>
+  </div>
 
 </ion-content>

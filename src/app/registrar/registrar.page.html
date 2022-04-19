@@ -1,14 +1,47 @@
 <ion-header>
   <ion-toolbar>
-   
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
- 
-    <ion-title>Registrar</ion-title>
+    
+    <ion-title class="ion-text-center">Registrar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <h1 class="titulos">Bienvenido</h1>
+  <h3 class="titulos" >Para Registrarse complete los datos solicitados</h3>
+   
+  <ion-card>
+    
+    <ion-item class="input-registrar">
+      <ion-label position="floating" class="ion-text-center">Rut</ion-label>
+      <ion-input class="ion-text-center" placeholder="12345678-9"></ion-input>
+    </ion-item>
+    <ion-item class="input-registrar">
+      <ion-label position="floating" type="number" class="ion-text-center">Cel</ion-label>
+      <ion-input class="ion-text-center" placeholder="123456789"></ion-input>
+    </ion-item>
+    <ion-item class="input-registrar">
+      <ion-label position="floating" class="ion-text-center">Email</ion-label>
+      <ion-input class="ion-text-center" placeholder="email@duocuc.cl"></ion-input>
+    </ion-item>
+    <ion-item class="input-registrar">
+      <ion-label position="floating" class="ion-text-center">Password</ion-label>
+      <ion-input class="ion-text-center"></ion-input>
+    </ion-item>
+    <ion-item class="input-registrar">
+     <ion-label position="floating" class="ion-text-center">Repita Password</ion-label>
+      <ion-input class="ion-text-center"></ion-input> 
+    </ion-item>
+    <div class="boton">
+      <ion-button (click)="presentAlert()" expand="block" routerLink="/login" >Registrar</ion-button>
+    </div>
+
+    
+  </ion-card>
+
+  <div class="boton" >
+    <ion-button class="boton-cancelar" color="warning" routerLink="Login" >Cancelar</ion-button>
+  </div>
+
 
 </ion-content>
