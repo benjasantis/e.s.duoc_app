@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-text-center">
+    <ion-title class="ion-text-center" slot="end">
       E.S.D.A
     </ion-title>
   </ion-toolbar>
@@ -12,10 +12,27 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
+
+
+  <h1 class="titulo">
+    ¿Que hacemos hoy?
+  </h1>
+
+  <div class="botones">
+    <div>
+      <img routerLink="/login" class="img" src="assets/img/perfil.png" alt="">
+      <h4>Mi perfil</h4>
+    </div>
+    <div>
+      <img routerLink="/login" class="img" src="assets/img/comunidad.png" alt="">
+      <h4>Comunidad</h4>
+    </div>
+    <div>
+      <img routerLink="/login" class="img" src="assets/img/publicar.png" alt="">
+      <h4>Publicar</h4>
+    </div>
+  </div>
   
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
 </ion-content>
