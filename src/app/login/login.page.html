@@ -4,38 +4,40 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="contenido">
+  <div class="header">
+    <ion-card-title class="ion-text-center">Login</ion-card-title>
+    <div class="icono">
+      <img src="assets/img/LOGIN-DEF.png" alt="">
+    </div>
+  </div>
 
-  <ion-card >
-    <ion-card-header>
-      <ion-card-title class="ion-text-center" >Login</ion-card-title>
-      <div class="icono">
-        <ion-icon size="large" name="person-outline"></ion-icon>
-      </div>
-      
-    </ion-card-header>
-  
-    <ion-card-content >
+
+
+
+
+  <div>
+
+    <ion-card>
       <ion-item>
-        <ion-label position="floating" class="ion-text-center">Rut</ion-label>
-        <ion-input class="ion-text-center"></ion-input>
+        <ion-label clearInput position="floating" class="ion-text-center">Rut</ion-label>
+        <ion-input clearInput class="ion-text-center"></ion-input>
       </ion-item>
-      <ion-item >
-        <ion-label position="floating" class="ion-text-center">Password</ion-label>
-        <ion-input class="ion-text-center"></ion-input>
+      <ion-item>
+        <ion-label clearInput position="floating" class="ion-text-center">Password</ion-label>
+        <ion-input clearInput class="ion-text-center"></ion-input>
       </ion-item>
 
       <br><br><br><br>
       <div class="boton">
-        <ion-button  color="secondary" routerLink="/recuperar">Recuperar</ion-button>
-        <ion-button   color="success" routerLink="/home">Ingresar</ion-button>
+        <ion-button color="secondary" routerLink="/recuperar">Recuperar</ion-button>
+        <ion-button color="success" routerLink="/home">Ingresar</ion-button>
       </div>
-      
-
-    </ion-card-content>
-  </ion-card>
+    </ion-card>
     <div class="boton">
       <ion-button class="boton-registrar" color="warning" expand="block" routerLink="/registrar">Registrar</ion-button>
     </div>
-    
+
+  </div>
+
 </ion-content>

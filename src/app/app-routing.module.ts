@@ -25,9 +25,14 @@ const routes: Routes = [
     loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
   },
   {
+    path: 'comunidad',
+    loadChildren: () => import('./comunidad/comunidad.module').then( m => m.ComunidadPageModule)
+  },
+  {
     path:'**',
     redirectTo: 'login'
-  }
+  },
+  
 ];
 
 @NgModule({
