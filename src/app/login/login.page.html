@@ -6,38 +6,31 @@
 
 <ion-content class="contenido">
   <div class="header">
-    <ion-card-title class="ion-text-center">Login</ion-card-title>
+    <h1>Login</h1>
     <div class="icono">
       <img src="assets/img/LOGIN-DEF.png" alt="">
     </div>
   </div>
+  <ion-card class="card">
 
+    <ion-input clearInput class="ion-text-center" placeholder="Rut"></ion-input>
+    <ion-input clearInput class="ion-text-center" placeholder="Password" type="password"></ion-input>
 
-
-
-
-  <div>
-
-    <ion-card>
-      <ion-item>
-        <ion-label clearInput position="floating" class="ion-text-center">Rut</ion-label>
-        <ion-input clearInput class="ion-text-center"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label clearInput position="floating" class="ion-text-center">Password</ion-label>
-        <ion-input clearInput class="ion-text-center"></ion-input>
-      </ion-item>
-
-      <br><br><br><br>
-      <div class="boton">
-        <ion-button color="secondary" routerLink="/recuperar">Recuperar</ion-button>
-        <ion-button color="success" routerLink="/home">Ingresar</ion-button>
-      </div>
-    </ion-card>
     <div class="boton">
-      <ion-button class="boton-registrar" color="warning" expand="block" routerLink="/registrar">Registrar</ion-button>
-    </div>
+      <div>
+        <ion-button color="secondary" size="small" routerLink="/recuperar">Recuperar</ion-button>
+      </div>
+      <div>
+        <ion-button color="primary" size="small" routerLink="/home">Ingresar</ion-button>
+      </div>
 
+    </div>
+  </ion-card>
+  <div class="boton-registrar">
+    <ion-button class="b_registrar" color="warning" size="Large" routerLink="/registrar">Registrar</ion-button>
   </div>
+
+
+
 
 </ion-content>

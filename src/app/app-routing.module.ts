@@ -29,9 +29,19 @@ const routes: Routes = [
     loadChildren: () => import('./comunidad/comunidad.module').then( m => m.ComunidadPageModule)
   },
   {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'publicar',
+    loadChildren: () => import('./publicar/publicar.module').then( m => m.PublicarPageModule)
+  },
+  {
     path:'**',
     redirectTo: 'login'
-  },
+  }
+  
+  
   
 ];
 
