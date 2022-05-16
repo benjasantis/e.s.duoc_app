@@ -7,4 +7,37 @@
 
 <ion-content>
 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title><ion-input clearInput class="ion-text-center" placeholder="Titulo"></ion-input></ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Carrera</ion-label>
+        <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+          <ion-select-option>Analista Programador</ion-select-option>
+          <ion-select-option>Tecnico en Logistica</ion-select-option>
+          <ion-select-option>Enfermeria</ion-select-option>
+          <ion-select-option>Tecnico en Construccion</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Asignatura</ion-label>
+        <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+          <ion-select-option>Habilidades de comunicacion</ion-select-option>
+          <ion-select-option>Matematicas</ion-select-option>
+          <ion-select-option>Ingles 1</ion-select-option>
+          <ion-select-option>Ingles 2</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-card-title class="descripcion">
+      <ion-textarea placeholder="Ingrese la descripcion aquí..." auto-grow></ion-textarea>
+    </ion-card-title>
+    
+
+  </ion-card>
+
 </ion-content>
