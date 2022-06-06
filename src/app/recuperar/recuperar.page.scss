@@ -1,19 +1,39 @@
 
-.header {
-    text-align: center;
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 10%;
+
+.card{
+    border-radius: 50px 50px 50px 50px ;
+    height: 60%;
+    background-color: #ffcc3a   ;
+    margin-bottom: 0%;
+    padding: 10%;
+
 }
 
-.icono {
-    width: 35%;
-    height: 35%;
+.img{
+    width: 40%;
+    height: 40%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.boton{
+.titulo{
+    margin: 5%;
     text-align: center;
+}
+.input{
+    text-align: center;
+    border-radius: 20px;
+    margin-top:10% ;
+
+
+}
+
+.boton{
+    margin: 5%;
+    text-align: center;
+}
+
+
+.icon{
+    margin: auto;
 }

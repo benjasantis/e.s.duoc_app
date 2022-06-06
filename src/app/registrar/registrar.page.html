@@ -1,47 +1,45 @@
-<ion-header>
+<ion-header >
   <ion-toolbar>
+    <ion-title class="ion-text-center" slot="end">
+      <img src="assets/img/logout.png" alt="" width="40%" height="40%" class="ion-margin" routerLink="/login">
+    </ion-title>
+    <ion-title class="ion-text-center" slot="start">
+      Registrar
+    </ion-title>
     
-    <ion-title class="ion-text-center">Registrar</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="contenido">
 
-  <h1 class="titulos">Bienvenido</h1>
-  <h3 class="titulos" >Para Registrarse complete los datos solicitados</h3>
-   
-  <ion-card>
-    
-    <ion-item class="input-registrar">
-      <ion-label position="floating" class="ion-text-center">Rut</ion-label>
-      <ion-input class="ion-text-center" placeholder="12345678-9"></ion-input>
-    </ion-item>
-    <ion-item class="input-registrar">
-      <ion-label position="floating" type="number" class="ion-text-center">Cel</ion-label>
-      <ion-input class="ion-text-center" placeholder="123456789"></ion-input>
-    </ion-item>
-    <ion-item class="input-registrar">
-      <ion-label position="floating" class="ion-text-center">Email</ion-label>
-      <ion-input class="ion-text-center" placeholder="email@duocuc.cl"></ion-input>
-    </ion-item>
-    <ion-item class="input-registrar">
-      <ion-label position="floating" class="ion-text-center">Password</ion-label>
-      <ion-input class="ion-text-center"></ion-input>
-    </ion-item>
-    <ion-item class="input-registrar">
-     <ion-label position="floating" class="ion-text-center">Repita Password</ion-label>
-      <ion-input class="ion-text-center"></ion-input> 
-    </ion-item>
-    <div class="boton">
-      <ion-button (click)="presentAlert()" expand="block" routerLink="/login" >Registrar</ion-button>
+  <div class="titulo">
+    <ion-card-header>
+      <ion-card-title >¡Bienvenido!</ion-card-title>
+    </ion-card-header>
+    <div class="img">
+      <img src="/assets/img/registrar.png" alt="">
     </div>
+    <ion-card-title >¡Para registrarse complete los datos!</ion-card-title>
+  </div>
+  
+
+
+  <ion-card class="card">
 
     
+    <ion-item class="input">
+      <ion-label position="floating" >Rut</ion-label>
+      <ion-input placeholder="12345678"></ion-input>
+    </ion-item>
+    <ion-item class="input">
+      <ion-label  position="floating"  >Password</ion-label>
+      <ion-input type="password" ></ion-input>
+      <ion-icon class="icon" name="eye" color="gray" slot="end" ></ion-icon> 
+    </ion-item>
+
+    <div class="boton-registrar">
+      <img src="/assets/img/boton-registrar1.png" routerLink="/home" alt="">
+    </div>
   </ion-card>
-
-  <div class="boton" >
-    <ion-button class="boton-cancelar" color="warning" routerLink="Login" >Cancelar</ion-button>
-  </div>
-
 
 </ion-content>

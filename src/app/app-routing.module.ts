@@ -37,9 +37,14 @@ const routes: Routes = [
     loadChildren: () => import('./publicar/publicar.module').then( m => m.PublicarPageModule)
   },
   {
+    path: 'administrador',
+    loadChildren: () => import('./administrador/administrador.module').then( m => m.AdministradorPageModule)
+  },
+  {
     path:'**',
     redirectTo: 'login'
-  }
+  },
+  
   
   
   

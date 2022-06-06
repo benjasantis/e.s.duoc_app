@@ -1,6 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-end">E.S.D.A</ion-title>
+    <ion-title class="ion-text-center" slot="end">
+      <!--mientras tanto este boton es para ingresar al administrador, luego sera automatico a traves de las credenciales.-->
+      <img src="assets/img/adm.png" alt="" width="40%" height="40%" class="ion-margin" routerLink="/administrador">
+    </ion-title>
+    <ion-title class="ion-text-center" slot="start">
+      E.S.D.A
+    </ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
@@ -13,22 +20,29 @@
   </div>
   <ion-card class="card">
 
-    <ion-input clearInput class="ion-text-center" placeholder="Rut"></ion-input>
-    <ion-input clearInput class="ion-text-center" placeholder="Password" type="password"></ion-input>
+    <ion-item class="input">
+      <ion-label position="floating" >Rut</ion-label>
+      <ion-input placeholder="12345678"></ion-input>
+    </ion-item>
+    <ion-item class="input">
+      <ion-label  position="floating"  >Password</ion-label>
+      <ion-input type="password" ></ion-input>
+      <ion-icon class="icon" name="eye" color="gray" slot="end" ></ion-icon> 
+    </ion-item>
 
-    <div class="boton">
-      <div>
-        <ion-button color="secondary" size="small" routerLink="/recuperar">Recuperar</ion-button>
+    <div >
+
+      <div class="boton">
+        <ion-button  color="primary" size="Large" routerLink="/home" ><b>Ingresar</b></ion-button>
       </div>
-      <div>
-        <ion-button color="primary" size="small" routerLink="/home">Ingresar</ion-button>
+      <div class="boton-registrar">
+        <ion-button color="secondary" size="Large" routerLink="/recuperar"><b>Recuperar</b></ion-button>
+        <ion-button class="b_registrar" color="warning" size="Large" routerLink="/registrar"><b>Registrar</b></ion-button>
       </div>
 
     </div>
   </ion-card>
-  <div class="boton-registrar">
-    <ion-button class="b_registrar" color="warning" size="Large" routerLink="/registrar">Registrar</ion-button>
-  </div>
+  
 
 
 
