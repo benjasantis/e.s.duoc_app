@@ -1,0 +1,32 @@
+.contenido{
+    text-align: center;
+}
+
+.card{
+    border-radius: 50px 50px 50px 50px ;
+    height: 90%;
+    background-color: black   ;
+    margin-bottom: 0%;
+    padding: 10%;
+
+}
+
+.opciones{
+    display:grid;
+    place-items: center;
+    height: 100%;
+    
+    
+}
+.blanco{
+    color: white;
+}
+
+.publicaciones img{
+    max-width: 60%;
+}
+
+.informacion img{
+    max-width: 60%;
+}
+

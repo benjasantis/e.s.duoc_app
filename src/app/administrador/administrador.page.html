@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title class="ion-text-center" slot="end">
-      <img src="assets/img/logout.png" alt="" width="40%" height="40%" class="ion-margin" routerLink="/login">
+      <img src="assets/img/logout.png" alt="" width="40%" height="40%" class="ion-margin" (click)="cerrarSesion()">
     </ion-title>
     <ion-title class="ion-text-center" slot="start">
       Administrador
@@ -12,51 +12,19 @@
 
 <ion-content class="contenido">
 
-  <ion-card class="perfiles">
+  <ion-card class="card">
+    <div class="opciones">
 
-    <ion-card-title class="titulo" > <b>Usuarios</b></ion-card-title>
+      <div class="sistema">
+        <img src="assets/img/systema.jpg" alt="" routerLink="/administrarsystema">
+        <p class="blanco"><b>Administrar Sistema</b></p>
+      </div>
+      <div class="usuarios">
+        <img src="assets/img/usuarios.png" alt="" routerLink="/administrarusuarios">
+        <p class="blanco"><b>Administrar Usuarios</b></p>
+      </div>
 
-    <ion-card class="card" >
-      <div class="img">
-        <img src="assets/img/user-perfil.png"  routerLink="/perfil-usuario" alt="">
-      </div>
-      <div class="info">
-        <p> <b> Nombre</b></p>
-        <p> <b> Email </b></p>
-        <p> <b> Carrera </b></p>
-      </div>
-    </ion-card>
-    <ion-card class="card" >
-      <div class="img">
-        <img src="assets/img/user-perfil.png"  routerLink="/perfil-usuario" alt="">
-      </div>
-      <div class="info">
-        <p> <b> Nombre</b></p>
-        <p> <b> Email </b></p>
-        <p> <b> Carrera </b></p>
-      </div>
-    </ion-card>
-    <ion-card class="card" >
-      <div class="img">
-        <img src="assets/img/user-perfil.png"  routerLink="/perfil-usuario" alt="">
-      </div>
-      <div class="info">
-        <p> <b> Nombre</b></p>
-        <p> <b> Email </b></p>
-        <p> <b> Carrera </b></p>
-      </div>
-    </ion-card>
-    <ion-card class="card" >
-      <div class="img">
-        <img src="assets/img/user-perfil.png"  routerLink="/perfil-usuario" alt="">
-      </div>
-      <div class="info">
-        <p> <b> Nombre</b></p>
-        <p> <b> Email </b></p>
-        <p> <b> Carrera </b></p>
-      </div>
-    </ion-card>
-
+    </div>
   </ion-card>
 
 </ion-content>

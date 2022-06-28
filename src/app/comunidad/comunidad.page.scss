@@ -3,7 +3,7 @@
 }
 
 .card{
-    background-color: beige;
+    background-color: black;
 }
 
 .img{
@@ -17,6 +17,18 @@
     float: left;
     width: 60%;
     margin-right: 5%;
+    background-color: black;
+    color: aliceblue;
+}
+
+.boton{
+    text-align: center;
+}
+
+.boton img{
+    width: 10%;
+    filter: drop-shadow(5px 5px 5px hsl(0deg 0% 0% / 0.5));
+    cursor: pointer;
 }
 
 

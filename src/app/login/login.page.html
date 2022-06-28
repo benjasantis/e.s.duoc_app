@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title class="ion-text-center" slot="end">
       <!--mientras tanto este boton es para ingresar al administrador, luego sera automatico a traves de las credenciales.-->
-      <img src="assets/img/adm.png" alt="" width="40%" height="40%" class="ion-margin" routerLink="/administrador">
+      <img src="assets/img/adm.png" alt="" width="40%" height="40%" class="ion-margin" routerLink="/login-admin">
     </ion-title>
     <ion-title class="ion-text-center" slot="start">
       E.S.D.A
@@ -22,18 +22,18 @@
 
     <ion-item class="input">
       <ion-label position="floating" >Rut</ion-label>
-      <ion-input placeholder="12345678"></ion-input>
+      <ion-input placeholder="12345678-9" maxlength="10" minlength="9" [(ngModel)]="usuario.RUT_USUARIO"></ion-input>
     </ion-item>
     <ion-item class="input">
       <ion-label  position="floating"  >Password</ion-label>
-      <ion-input type="password" ></ion-input>
-      <ion-icon class="icon" name="eye" color="gray" slot="end" ></ion-icon> 
+      <ion-input [type]="showPassword ? 'text' : 'password' "  [(ngModel)]="usuario.PASSWORD_USUARIO"></ion-input>
+      <ion-icon class="icon" name="eye" color="gray" slot="end" (click)="mostrarContrasena()"></ion-icon> 
     </ion-item>
 
     <div >
 
       <div class="boton">
-        <ion-button  color="primary" size="Large" routerLink="/home" ><b>Ingresar</b></ion-button>
+        <ion-button  color="primary" size="Large" (click)="ingresar()" routerLink="/home"><b>Ingresar</b></ion-button>
       </div>
       <div class="boton-registrar">
         <ion-button color="secondary" size="Large" routerLink="/recuperar"><b>Recuperar</b></ion-button>

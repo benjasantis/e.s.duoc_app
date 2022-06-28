@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" slot="end">
+      <img
+        src="assets/img/volver4.png"
+        alt=""
+        width="40%"
+        height="40%"
+        class="ion-margin"
+        routerLink="/administrador"
+      />
+    </ion-title>
+    <ion-title class="ion-text-center" slot="start">
+      Administrar Sistema
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenido">
+  <ion-card class="asignatura">
+    <ion-item>
+      <ion-label position="floating">Ingrese nueva asignatura</ion-label>
+      <ion-input [(ngModel)]="asig.NOMBRE_ASIGNATURA"></ion-input>
+      <ion-button (click)="agregarAsignatura()" size="small" color="dark">Agregar</ion-button>
+      <ion-button (click)="exportAsignatura()"  color="success" >EXCEL</ion-button>
+    </ion-item>
+  </ion-card>
+  <ion-card class="carrera">
+    <ion-item>
+      <ion-label position="floating">Ingrese nueva carrera</ion-label>
+      <ion-input [(ngModel)]="carr.NOMBRE_CARRERA"></ion-input>
+      <ion-button (click)="agregarCarrera()" size="small" color="dark">Agregar</ion-button>
+      <ion-button (click)="exportCarrera()"  color="success" >EXCEL</ion-button>
+    </ion-item>
+  </ion-card>
+  <ion-card class="comuna">
+    <ion-item>
+      <ion-label position="floating">Ingrese nueva comuna</ion-label>
+      <ion-input [(ngModel)]="com.NOMBRE_COMUNA"></ion-input>
+      <ion-button (click)="agregarComuna()" size="small" color="dark">Agregar</ion-button>
+      <ion-button (click)="exportComuna()"  color="success" >EXCEL</ion-button>
+    </ion-item>
+  </ion-card>
+  <ion-card class="genero">
+    <ion-item>
+      <ion-label position="floating">Ingrese nuevo genero</ion-label>
+      <ion-input [(ngModel)]="gen.NOMBRE_GENERO"></ion-input>
+      <ion-button (click)="agregarGenero()" size="small" color="dark">Agregar</ion-button>
+      <ion-button (click)="exportGenero()"  color="success" >EXCEL</ion-button>
+    </ion-item>
+  </ion-card>
+  <ion-card class="sede">
+    <ion-item>
+      <ion-label position="floating">Ingrese nueva sede</ion-label>
+      <ion-input [(ngModel)]="sed.NOMBRE_SEDE"></ion-input>
+      <ion-button (click)="agregarSede()" size="small" color="dark">Agregar</ion-button>
+      <ion-button (click)="exportSede()"  color="success" >EXCEL</ion-button>
+    </ion-item>
+  </ion-card>
+
+  <table class="tabla" id="asignatura-table">
+    <tr>
+      <th>ASIGNATURAS</th>
+    </tr>
+    <tr *ngFor="let a of asignatura">
+      <td>{{a.NOMBRE_ASIGNATURA}}</td>
+    </tr>
+  </table>
+  <table class="tabla" id="carrera-table">
+    <tr>
+      <th>CARRERAS</th>
+    </tr>
+    <tr *ngFor="let c of carrera">
+      <td>{{c.NOMBRE_CARRERA}}</td>
+    </tr>
+  </table>
+  <table class="tabla" id="sede-table">
+    <tr>
+      <th>SEDES</th>
+    </tr>
+    <tr *ngFor="let s of sede">
+      <td>{{s.NOMBRE_SEDE}}</td>
+    </tr>
+  </table>
+  <table class="tabla" id="genero-table">
+    <tr>
+      <th>GENERO</th>
+    </tr>
+    <tr *ngFor="let g of genero">
+      <td>{{g.NOMBRE_GENERO}}</td>
+    </tr>
+  </table>
+  <table class="tabla" id="comuna-table">
+    <tr>
+      <th>COMUNAS</th>
+    </tr>
+    <tr *ngFor="let co of comuna">
+      <td>{{co.NOMBRE_COMUNA}}</td>
+    </tr>
+  </table>
+</ion-content>

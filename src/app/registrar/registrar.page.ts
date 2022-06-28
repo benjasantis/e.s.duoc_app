@@ -16,10 +16,8 @@ export class RegistrarPage implements OnInit {
   alert;
 
   usuario: any = {
-
-
-    email: "",
-    password: "",
+    RUT_USUARIO: "",
+    PASSWORD_USUARIO: "",
    
 
   }
@@ -27,30 +25,21 @@ export class RegistrarPage implements OnInit {
   ngOnInit() {
   }
 
- /* Registrar() {
 
-      this.api.crearUsuario(this.usuario.email, this.usuario.password).subscribe((resultado) => {
-        console.log(resultado);
-      }
-      );
+  registrar() {
 
-
-  }*/
-
-  Registrar() {
-
-    if (this.usuario.email == "") {
+    if (this.usuario.RUT_USUARIO == "") {
 
       this.error("");
 
     }
-    else if (this.usuario.password == "") {
+    else if (this.usuario.PASSWORD_USUARIO == "") {
       this.error("");
 
     }
     
     else {
-      this.api.crearUsuario(this.usuario.email, this.usuario.password).subscribe((resultado) => {
+      this.api.crearUsuario(this.usuario.RUT_USUARIO, this.usuario.PASSWORD_USUARIO).subscribe((resultado) => {
         console.log(resultado);
         this.router.navigate(['/login']);
         this.presentAlert("");
@@ -87,6 +76,13 @@ export class RegistrarPage implements OnInit {
 
     await this.alert.present();
 
+  }
+
+  showPassword = false;
+
+  mostrarContrasena(): void{
+
+    this.showPassword = !this.showPassword;
   }
 
 

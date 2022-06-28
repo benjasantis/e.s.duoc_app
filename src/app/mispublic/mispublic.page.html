@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Publicacines</ion-title>
+    <img slot="end" routerLink="/perfil" src="assets/img/volver4.png" alt="" width="10%" height="10%" class="ion-margin">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenido">
+
+  <div class="actualizar">
+    <img src="assets/img/actualizar.png" (click)="actualizar()" alt="">
+  </div>
+
+
+  
+  <ion-card class="card" *ngFor="let p of pub ">
+    <div class="info">
+      <p>{{p.ID_PUBLIC}}</p>
+      <p>Titulo: {{p.TITULO_PUBLIC}}</p>
+      <p>Descripcion: {{p.DESC_PUBLIC}}</p>
+      <p>Contenido: {{p.CONT_PUBLIC}}</p>    
+    </div>
+    <div class="button">
+      <ion-button size="small" (click)="abrirPublic(p.ID_PUBLIC)">abrir</ion-button>
+    </div>
+    
+   
+    
+  </ion-card>
+  
+
+  
+
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>infopersonal</ion-title>
+    <img slot="end" routerLink="/perfil" src="assets/img/volver4.png" alt="" width="10%" height="10%" class="ion-margin">
+  </ion-toolbar>
+</ion-header>
+<ion-content class="contenido">
+  <div class="actualizar">
+    <img src="assets/img/actualizar.png" alt="" (click)="actualizarinfo()">
+  </div>
+  <ion-card class="card" >
+    <div class="info" *ngFor="let in of info ">
+      <p >{{in.RUT_USUARIO}}</p>
+      <p >{{in.PNOMBRE_USUARIO}} {{in.PAPELLIDO_USUARIO}} {{in.SAPELLIDO_USUARIO}}</p>
+      <p >{{in.EMAIL}}</p>
+      <p >{{in.NOMBRE_CARRERA}}</p>
+      <p >{{in.NOMBRE_SEDE}}</p>
+      <p >{{in.TELEFONO_USUARIO}}</p>
+      <p >{{in.DIRECCION_USUARIO}}</p>
+      <p >{{in.NOMBRE_GENERO}}</p>
+      <p >{{in.NOMBRE_COMUNA}}</p>
+    </div>
+  
+  </ion-card>
+  
+  <ion-button size="small" color="success" routerLink="/agregarinfo">AGREGAR Info</ion-button>
+  <ion-button size="small" color="warning" routerLink="/actualizardatos" >actualizar datos</ion-button>
+  
+  
+  
+
+</ion-content>

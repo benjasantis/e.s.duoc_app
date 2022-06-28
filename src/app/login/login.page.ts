@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../Service/service.service';
 import { AlertController } from '@ionic/angular';
-import {Router} from '@angular/router';
+import {Router, NavigationExtras} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,63 +14,53 @@ export class LoginPage implements OnInit {
   ) { }
 
   alert;
-  usuario: any = { email:"", password:""}
+  usuario: any = {
+    RUT_USUARIO: "",
+    PASSWORD_USUARIO: "",
+  }
 
   ngOnInit() {
+    
   }
-  /*
-  ingresar()
-  {
-    this.api.postLogin(this.usuario.email, this.usuario.password).subscribe((resultado)=>{
-      
-      console.log(resultado.result)
 
-      if(resultado.result == "Login incorrecto")  
-      {
-        console.log("No puede ingresar")
+  ingresar(){
+    this.api.login(this.usuario.RUT_USUARIO, this.usuario.PASSWORD_USUARIO).subscribe((res) =>{
+      console.log(res['msg']);
+      console.log(res['RUT_USUARIO']);
 
+      if(res['msg']){
+        let DataUser:any=res['RUT_USUARIO'];
+        this.api.setCurrentUser(DataUser);
+        this.router.navigate(['/home'])
+        this.usuario.RUT_USUARIO = "";
+        this.usuario.PASSWORD_USUARIO = "";
+      }else{
         this.error("");
-
-        this.usuario.email='';
-        this.usuario.password='';
-         
+        this.usuario.RUT_USUARIO = "";
+        this.usuario.PASSWORD_USUARIO = "";
       }
-      else if(this.usuario.email == ""){
-
-        this.error("");
-
-      }
-      else if(this.usuario.password == ""){
-        this.error("");
-      }
-
-      else {
-
-        
-        console.log("Ingreso Correcto")
-        this.router.navigate(['/home']);
-        console.log(resultado.result)
-        this.usuario.email='';
-        this.usuario.password='';
-        
-      }
-
     })
 
-
-  }*/
-
+  }
   async error(mensaje) {
     this.alert = await this.alerta.create({
      cssClass: 'my-custom-class',
-     header: 'Faltan Campos',
-     subHeader: 'Favor de completar todos los campos solicitados',
+     header: 'Ingreso incorrecto',
+     subHeader: 'Vuelva a intentarlo',
      message: mensaje,
-     buttons: ['Reintentar']
+     buttons: ['Aceptar']
    });
   
    await this.alert.present();
   
   }
+
+  showPassword = false;
+
+  mostrarContrasena(): void{
+
+    this.showPassword = !this.showPassword;
+  }
+
 
 }

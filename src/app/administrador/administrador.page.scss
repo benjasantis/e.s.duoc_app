@@ -1,4 +1,6 @@
-
+.contenido{
+    text-align: center;
+}
 
 .perfiles{
     height: auto;
@@ -8,24 +10,32 @@
 }
 
 .card{
-    background-color: white;
+    background-color: #124763;
     margin: 10%;
-}
-
-.img{
-    float: left;
-    width: 25%;
-    margin: 5%;
+    text-align: center;
     
 }
-.info{
-    float: left;
-    width: 60%;
-    margin-right: 5%;
+
+.sistema{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+
 }
 
-.titulo{
-    text-align: center;
-    color: white;
-    margin: 2%;
+.sistema img{
+    border-radius: 50%;
+}
+
+.usuarios{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.usuarios img{
+
 }

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" >
+      <img src="assets/img/logout.png" alt="" width="10%" height="10%" class="ion-margin" routerLink="/login" >
+    </ion-title>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenido">
+  <div class="header">
+    <h1>Login Adm</h1>
+    <div class="icono">
+      <img src="assets/img/anonymous.png" alt="">
+    </div>
+  </div>
+  <ion-card class="card">
+
+    <ion-item class="input">
+      <ion-label position="floating" >Rut</ion-label>
+      <ion-input placeholder="12345678" maxlength="10" minlength="9" [(ngModel)]="admin.RUT_ADMINISTRADOR"></ion-input>
+    </ion-item>
+    <ion-item class="input">
+      <ion-label  position="floating"  >Password</ion-label>
+      <ion-input [type]="showPassword ? 'text' : 'password' " [(ngModel)]="admin.CONTRASENA_ADMINISTRADOR"></ion-input>
+      <ion-icon class="icon" name="eye" color="gray" slot="end" (click)="mostrarContrasena()"></ion-icon> 
+    </ion-item>
+
+    <div >
+
+      <div class="boton">
+        <ion-button  color="danger" size="Large" (click)="ingresar()" routerLink="/administrador" ><b>Ingresar</b></ion-button>
+      </div>
+
+    </div>
+  </ion-card>
+  
+
+
+
+
+</ion-content>

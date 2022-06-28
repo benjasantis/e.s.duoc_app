@@ -26,20 +26,16 @@
     
     <ion-item class="input">
       <ion-label position="floating" >Rut</ion-label>
-      <ion-input placeholder="12345678"></ion-input>
-    </ion-item>
-    <ion-item class="input">
-      <ion-label position="floating" >Email</ion-label>
-      <ion-input placeholder="email@duocuc.cl"></ion-input>
+      <ion-input placeholder="12345678" maxlength="10" minlength="9" [(ngModel)]="res.RUT_USUARIO"></ion-input>
     </ion-item>
     <ion-item class="input">
       <ion-label  position="floating"  >Password</ion-label>
-      <ion-input type="password" ></ion-input>
-      <ion-icon class="icon" name="eye" color="gray" slot="end" ></ion-icon> 
+      <ion-input [type]="showPassword ? 'text' : 'password' "  [(ngModel)]="res.PASSWORD_USUARIO"></ion-input>
+      <ion-icon class="icon" name="eye" color="gray" slot="end" (click)="mostrarContrasena()"></ion-icon> 
     </ion-item>
 
     <div class="boton">
-      <ion-button  color="primary" size="Large" routerLink="/home" ><b>Recuperar</b></ion-button>
+      <ion-button  color="primary" size="Large" (click)="restablecer()" ><b>Recuperar</b></ion-button>
     </div>
   </ion-card>
 

@@ -6,9 +6,11 @@
 </ion-header>
 
 <ion-content >
-  
-  
-  <ion-button expand="block" (click)="comunidad()" >Actualizar publicaciones</ion-button>
+
+  <div class="boton">
+    <img src="assets/img/actualizar.png" (click)="comunidad()" alt="">
+  </div>
+
 
   
   <ion-card class="card" *ngFor="let p of pub ">
@@ -16,18 +18,16 @@
       <img src="assets/img/LOGIN-DEF.png" alt="">
     </div>
     <div class="info">
-      <p>{{p.titulo}}</p>
-      <p>{{p.carrera}}</p>
-      <p>{{p.descripcion}}</p>
+      <p>Titutlo: {{p.TITULO_PUBLIC}}</p>
+      <p>Descripcion: {{p.DESC_PUBLIC}}</p>
+      <p>Carrera: {{p.NOMBRE_CARRERA}}</p>
+      <p>Asignatura: {{p.NOMBRE_ASIGNATURA}}</p>
     </div>
+    <div class="boton">
+      <ion-button routerLink="/detallecomunidad" size="small" (click)="abrirPublic(p.ID_PUBLIC)" >Ver Publicacion</ion-button>
+    </div>
+    
 
   </ion-card>
-
-  
-  
-
-
-
-
 
 </ion-content>

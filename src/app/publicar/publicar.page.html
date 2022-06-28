@@ -1,46 +1,64 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title >Publicar</ion-title>
-    <img slot="end" routerLink="/home" src="assets/img/Home.png" alt="" width="20%" height="20%" class="ion-margin">
+    <ion-title>Publicar</ion-title>
+    <img
+      slot="end"
+      routerLink="/home"
+      src="assets/img/Home.png"
+      alt=""
+      width="20%"
+      height="20%"
+      class="ion-margin"
+    />
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  
   <ion-card class="card">
+    <ion-item class="input">
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input [(ngModel)] = "usuario.TITULO_PUBLIC" maxlength="30" minlength="10" placeholder="min 10, max 30 caracteres"></ion-input>
+    </ion-item>
 
-      <ion-item class="input">
-        <ion-label position="floating" >Titulo</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
+    <ion-item class="input">
+      <ion-label position="floating">Carrera</ion-label>
+      <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)] = "usuario.NOMBRE_CARRERA" >
+        <ion-select-option *ngFor="let c of carrera ">{{c.NOMBRE_CARRERA}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="input">
+      <ion-label position="floating">Asignatura</ion-label>
+      <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)] = "usuario.NOMBRE_ASIGNATURA">
+        <ion-select-option *ngFor="let a of asignatura ">{{a.NOMBRE_ASIGNATURA}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="input">
+      <ion-label position="floating">Sede</ion-label>
+      <ion-select okText="Okay" cancelText="Dismiss"  [(ngModel)] = "usuario.NOMBRE_SEDE" >
+      <ion-select-option *ngFor="let s of sede " >{{s.NOMBRE_SEDE}}</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-      <ion-item class="input">
-        <ion-label position="floating" >Carrera</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <ion-item class="input">
-        <ion-label position="floating" >Asignatura</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
+    <ion-item class="input">
+      <ion-label position="floating">Descripcion</ion-label>
+      <ion-input [(ngModel)] = "usuario.DESC_PUBLIC"
+        placeholder="min 20, max 50 caracteres" maxlength="50" minlength="20"
+      ></ion-input>
+    </ion-item>
 
-      <ion-item class="input">
-        <ion-label position="floating" >Descripcion</ion-label>
-        <ion-textarea placeholder="Ingrese la descripcion aquí..." auto-grow></ion-textarea>  
-      </ion-item>
+    <ion-item class="input">
+      <ion-label position="floating">Contenido</ion-label>
+      <ion-input  [(ngModel)] = "usuario.CONT_PUBLIC"
+        placeholder="min 30,  max 2000 caracteres" maxlength="2000" minlength="30"
+      ></ion-input>    
+    </ion-item>
 
-      <ion-item class="input">
-        <ion-label position="floating" >Contenido</ion-label>
-        <ion-textarea placeholder="Ingrese la descripcion aquí..." auto-grow></ion-textarea>  
-      </ion-item>
-
-      <div class="boton-publicar">
-        <img src="/assets/img/publicar.png" routerLink="/home" alt="">
-        <p><b>Publicar</b></p>
-      </div>
-
-
+    <div class="boton-publicar">
+      <img src="/assets/img/publicar.png" (click)="publicar()" alt="" />
+      <p><b>Publicar</b></p>
+    </div>
 
   </ion-card>
- 
-
 </ion-content>

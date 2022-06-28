@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-text-center" slot="end">
-      <img src="assets/img/logout.png" alt="" width="40%" height="40%" class="ion-margin" routerLink="/login">
+      <img src="assets/img/logout.png" alt="" width="40%" height="40%" class="ion-margin" (click)="cerrarSesion()" >
     </ion-title>
     <ion-title class="ion-text-center" slot="start">
       E.S.D.A
@@ -11,11 +11,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-
-  <h1 class="titulo">
-    ¿Que hacemos hoy?
-  </h1>
+  
+  <ion-card *ngFor ="let i of info">
+    <h1 class="titulo" >
+      ¿Que hacemos hoy? <b>{{i.PNOMBRE_USUARIO}}</b>
+      
+    </h1>
+  </ion-card >
+  
 
   <div class="botones">
     <div class="boton">
@@ -31,7 +34,5 @@
       <h4>Publicar</h4>
     </div>
   </div>
-  
-
 
 </ion-content>

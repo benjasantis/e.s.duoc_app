@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actualizar Datos</ion-title>
+    <img
+      slot="end"
+      routerLink="/infopersonal"
+      src="assets/img/volver4.png"
+      alt=""
+      width="10%"
+      height="10%"
+      class="ion-margin"
+    />
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-card class="card" >
+    <ion-card >
+      <div *ngFor="let a of antes" >
+        <p >Telefono anterior: {{a.TELEFONO_USUARIO}}</p>
+      </div>
+      <ion-item class="input">
+        <ion-label position="floating">Telefono nuevo</ion-label>
+        <ion-input [(ngModel)]="info.TELEFONO_USUARIO" type="number" max="8"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <div *ngFor="let a of antes" >
+        <p >Direccion anterior: {{a.DIRECCION_USUARIO}}</p>
+      </div>
+      <ion-item class="input">
+        <ion-label position="floating">Direccion nueva</ion-label>
+        <ion-input [(ngModel)]="info.DIRECCION_USUARIO" maxlength="30"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <div *ngFor="let a of antes" >
+        <p >Comuna anterior: {{a.NOMBRE_COMUNA}}</p>
+      </div>
+      <ion-item class="input">
+        <ion-label position="floating">Comuna nueva</ion-label>
+        <ion-select
+          okText="Okay"
+          cancelText="Dismiss"
+          [(ngModel)]="info.NOMBRE_COMUNA"
+        >
+          <ion-select-option *ngFor="let co of comuna "
+            >{{co.NOMBRE_COMUNA}}</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+    </ion-card>
+    
+    <ion-card>
+      <div *ngFor="let a of antes" >
+        <p >Genero anterior: {{a.NOMBRE_GENERO}}</p>
+      </div>
+      <ion-item class="input">
+        <ion-label position="floating">Genero nuevo</ion-label>
+        <ion-select
+          okText="Okay"
+          cancelText="Dismiss"
+          [(ngModel)]="info.NOMBRE_GENERO"
+        >
+          <ion-select-option *ngFor="let g of genero "
+            >{{g.NOMBRE_GENERO}}</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <div *ngFor="let a of antes" >
+        <p >Carrera anterior: {{a.NOMBRE_CARRERA}}</p>
+      </div>
+      <ion-item class="input">
+        <ion-label position="floating">Carrera nueva</ion-label>
+        <ion-select
+          okText="Okay"
+          cancelText="Dismiss"
+          [(ngModel)]="info.NOMBRE_CARRERA"
+        >
+          <ion-select-option *ngFor="let c of carrera "
+            >{{c.NOMBRE_CARRERA}}</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <div *ngFor="let a of antes" >
+        <p >Sede anterior: {{a.NOMBRE_SEDE}}</p>
+      </div>
+      <ion-item class="input">
+        <ion-label position="floating">Sede nueva</ion-label>
+        <ion-select
+          okText="Okay"
+          cancelText="Dismiss"
+          [(ngModel)]="info.NOMBRE_SEDE"
+        >
+          <ion-select-option *ngFor="let s of sede "
+            >{{s.NOMBRE_SEDE}}</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+    </ion-card>
+    
+
+    <div class="boton-publicar">
+      <img src="/assets/img/publicar.png" (click)="publicar()" alt="" />
+      <p><b>Actualizar</b></p>
+    </div>
+  </ion-card>
+</ion-content>

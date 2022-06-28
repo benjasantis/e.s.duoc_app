@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detallecomunidad</ion-title>
+    <img slot="end" routerLink="/comunidad" src="assets/img/volver4.png" alt="" width="10%" height="10%" class="ion-margin" (click)="volver()">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenido">
+
+  
+  <ion-card class="card"  >
+    <div class="info" *ngFor="let p of pub ">
+      <p>Usuario: {{p.RUT_USUARIO}}</p>
+      <p>Titulo publicacion: {{p.TITULO_PUBLIC}}</p>
+      <p>Descripcion publicacion: {{p.DESC_PUBLIC}}</p>
+      <P>Contenido: {{p.CONT_PUBLIC}}</P>
+      <p>Carrera: {{p.NOMBRE_CARRERA}}</p>
+      <p>Asignatura: {{p.NOMBRE_ASIGNATURA}}</p>
+
+    </div>
+
+    <div class="agregarComentario">
+      <h1><b>Nuevo Comentario</b></h1>
+      <ion-input [(ngModel)]="comentario.CONT_COMENTARIO" maxlength="200" placeholder="max 200 caracteres" ></ion-input>
+      <ion-button (click)="agregarComentario()">Comentar</ion-button>
+    </div>
+    <div class="comentarios">
+      <h1><b>Comentarios</b></h1>
+      <div class="border" *ngFor="let c of com">
+        <p>{{c.CONT_COMENTARIO}}</p>
+  
+  
+      </div>
+    </div >
+    
+
+  </ion-card>
+
+  
+
+</ion-content>

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" slot="end">
+      <img src="assets/img/volver4.png" alt="" width="40%" height="40%" class="ion-margin" routerLink="/administrador">
+    </ion-title>
+    <ion-title class="ion-text-center" slot="start">
+      Administrar Usuarios
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenido">
+
+  <div class="actualizar">
+    <img src="assets/img/actualizar.png" (click)="actualizar()" alt="">
+    
+  </div>
+  <ion-button (click)="exportexcel()"  color="success" >EXCEL</ion-button>
+  <table class="tabla" id="excel-table">
+    <tr>
+      <th>USUARIO</th>
+    </tr>
+    <tr *ngFor="let u of usuario">
+      <td>{{u.RUT_USUARIO}}</td>
+    </tr>
+  </table>
+
+  <ion-card class="perfiles">
+
+    <ion-card-title class="titulo" > <b>Usuarios</b></ion-card-title>
+
+    <ion-card class="card" *ngFor="let u of usuario">
+      <div class="img">
+        <img src="assets/img/user-perfil.png" alt="">
+      </div>
+      <div class="info">
+        <p> <b> Rut Usuario: {{u.RUT_USUARIO}}</b></p>
+        <div class="borrar">
+          <img src="assets/img/borrar.png" (click)="delete(u.RUT_USUARIO)" alt="">
+        </div>
+      </div>
+      
+    </ion-card>
+
+  </ion-card>
+
+</ion-content>
