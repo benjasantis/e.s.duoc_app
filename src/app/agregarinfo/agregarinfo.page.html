@@ -11,51 +11,51 @@
   <ion-card class="card" >
     <ion-item class="input">
       <ion-label position="floating">Email</ion-label>
-      <ion-input  [(ngModel)] = "info.EMAIL" maxlength="30" placeholder="email@duocuc.cl" type="email"></ion-input>
+      <ion-input  [(ngModel)] = "info.EMAIL" maxlength="30" placeholder="email@duocuc.cl" type="email" style="text-transform:uppercase;"></ion-input>
     </ion-item>
     <ion-item class="input">
       <ion-label position="floating">Primer nombre</ion-label>
-      <ion-input [(ngModel)] = "info.PNOMBRE_USUARIO" maxlength="30"></ion-input>
+      <ion-input [(ngModel)] = "info.PNOMBRE_USUARIO" maxlength="30" style="text-transform:uppercase;"></ion-input>
     </ion-item>
     <ion-item class="input">
       <ion-label position="floating">Primer Apellido</ion-label>
-      <ion-input [(ngModel)] = "info.PAPELLIDO_USUARIO" maxlength="30"></ion-input>
+      <ion-input [(ngModel)] = "info.PAPELLIDO_USUARIO" maxlength="30" style="text-transform:uppercase;"></ion-input>
     </ion-item>
     <ion-item class="input">
       <ion-label position="floating">Segundo Apellido</ion-label>
-      <ion-input [(ngModel)] = "info.SAPELLIDO_USUARIO" maxlength="30"></ion-input>
+      <ion-input [(ngModel)] = "info.SAPELLIDO_USUARIO" maxlength="30" style="text-transform:uppercase;"></ion-input>
     </ion-item>
     <ion-item class="input">
       <ion-label position="floating">Telefono</ion-label>
-      <ion-input [(ngModel)] = "info.TELEFONO_USUARIO" type="number" max=8 placeholder="12345678"></ion-input>
+      <ion-input [(ngModel)] = "info.TELEFONO_USUARIO" type="number" max=8 placeholder="12345678" style="text-transform:uppercase;"></ion-input>
     </ion-item>
     <ion-item class="input">
       <ion-label position="floating">Direccion</ion-label>
-      <ion-input [(ngModel)] = "info.DIRECCION_USUARIO" maxlength="30"></ion-input>
+      <ion-input [(ngModel)] = "info.DIRECCION_USUARIO" maxlength="30" style="text-transform:uppercase;"></ion-input>
     </ion-item>
     <ion-item class="input">
       <ion-label position="floating">Comuna</ion-label>
       <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)] = "info.NOMBRE_COMUNA" >
-        <ion-select-option *ngFor="let co of comuna ">{{co.NOMBRE_COMUNA}}</ion-select-option>
+        <ion-select-option *ngFor="let co of comuna " style="text-transform:uppercase;">{{co.NOMBRE_COMUNA}}</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item class="input">
       <ion-label position="floating">Genero</ion-label>
       <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)] = "info.NOMBRE_GENERO" >
-        <ion-select-option *ngFor="let g of genero ">{{g.NOMBRE_GENERO}}</ion-select-option>
+        <ion-select-option *ngFor="let g of genero " style="text-transform:uppercase;">{{g.NOMBRE_GENERO}}</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item class="input">
       <ion-label position="floating">Carrera</ion-label>
       <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)] = "info.NOMBRE_CARRERA" >
-        <ion-select-option *ngFor="let c of carrera ">{{c.NOMBRE_CARRERA}}</ion-select-option>
+        <ion-select-option *ngFor="let c of carrera "style="text-transform:uppercase;">{{c.NOMBRE_CARRERA}}</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item class="input">
       <ion-label position="floating">Sede</ion-label>
       <ion-select okText="Okay" cancelText="Dismiss"  [(ngModel)] = "info.NOMBRE_SEDE" >
-      <ion-select-option *ngFor="let s of sede " >{{s.NOMBRE_SEDE}}</ion-select-option>
+      <ion-select-option *ngFor="let s of sede " style="text-transform:uppercase;">{{s.NOMBRE_SEDE}}</ion-select-option>
       </ion-select>
     </ion-item>
 

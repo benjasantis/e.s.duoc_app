@@ -15,6 +15,7 @@ export class InfopersonalPage implements OnInit {
     public router: Router
   ) {}
 
+  alert;
   info: any;
   detalle: any = {
     RUT_USUARIO: '',
@@ -29,7 +30,7 @@ export class InfopersonalPage implements OnInit {
     });
   }
 
-  actualizarinfo() {
+  actualizardatos(){
     this.api.infoPersonal().subscribe((res) => {
       let rut = localStorage.getItem('UsuarioLogueado');
       this.info = res.filter(function (res) {
@@ -38,28 +39,52 @@ export class InfopersonalPage implements OnInit {
     });
   }
 
-  /*actualizar(RUT_USUARIO){
-    if(RUT_USUARIO === JSON.parse(localStorage.getItem('UsuarioLogueado'))){
-      this.router.navigate(['/actualizardatos']);
-      console.log(localStorage.getItem('UsuarioLogueado'));
-      console.log(RUT_USUARIO);
-      
+  actualizarinfo() {
+    if(this.info == ""){
+      this.error1();
     }else{
-      this.router.navigate(['/infopersonal']);
-      console.log("error")
-      console.log(localStorage.getItem('UsuarioLogueado'));
-      console.log(RUT_USUARIO);
+      this.api.infoPersonal().subscribe((res) => {
+        let rut = localStorage.getItem('UsuarioLogueado');
+        this.info = res.filter(function (res) {
+          return res.RUT_USUARIO === JSON.parse(rut);
+          
+        });this.router.navigate(['/actualizardatos'])
+      });
+    }
+    
+  }
+
+  agregar(){
+    if(this.info == ""){
+      this.router.navigate(['/agregarinfo']);
+    }else{
       
+      this.error();
     }
   }
 
-  agregar(RUT_USUARIO){
-    if(RUT_USUARIO === JSON.parse(localStorage.getItem('UsuarioLogueado'))){
-      this.router.navigate(['/infopersonal']);
-    }else{
-      
-      this.router.navigate(['/agregarinfo']);
-      
-    }
-  }*/
+  async error() {
+    this.alert = await this.alerta.create({
+     cssClass: 'my-custom-class',
+     header: 'Usted ya posee informacion agregada',
+     subHeader: 'Solo puede actualizar informacion',
+     
+     buttons: ['Aceptar']
+   });
+  
+   await this.alert.present();
+  
+  }
+  async error1() {
+    this.alert = await this.alerta.create({
+     cssClass: 'my-custom-class',
+     header: 'Usted aun no posee informacion agregada',
+     subHeader: 'Una vez agregaga informacion puede actualizar',
+     
+     buttons: ['Aceptar']
+   });
+  
+   await this.alert.present();
+  
+  }
 }

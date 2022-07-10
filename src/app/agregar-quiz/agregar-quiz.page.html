@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>agregarQuiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card class="quiz">
+
+    <ion-card class="pregunta1" >
+      <ion-item>
+        <ion-label position="floating">PREGUNTA 1</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA1.PREGUNTA1" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESA 1</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA1.RESPUESTA1" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESTA 2</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA1.RESPUESTA2" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESTA 3</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA1.RESPUESTA3" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESTA CORRECTA P.1</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA1.RESPUESTACORRECTA" ></ion-input>
+      </ion-item>
+    </ion-card>
+   <ion-card class="pregunta2">
+      <ion-item>
+        <ion-label position="floating">PREGUNTA 2</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA2.PREGUNTA2" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESTA 1</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA2.RESPUESTA1" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESTA 2</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA2.RESPUESTA2" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESTA 3</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA2.RESPUESTA3" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESTA CORRECTA P.2</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA2.RESPUESTACORRECTA" ></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card class="pregunta3">
+      <ion-item>
+        <ion-label position="floating">PREGUNTA 3</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA3.PREGUNTA3" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESTA 1</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA3.RESPUESTA1" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESTA 2</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA3.RESPUESTA2" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESTA 3</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA3.RESPUESTA3" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RESPUESTA CORRECTA P.3</ion-label>
+        <ion-input style="text-transform:uppercase;" [(ngModel)]="PREGUNTA3.RESPUESTACORRECTA" ></ion-input>
+      </ion-item>
+    </ion-card>
+  </ion-card>
+
+  <ion-button (click)="terminarquiz()">Terminar Quiz</ion-button>
+  <ion-button (click)="cancelar()" >Cancelar</ion-button>
+
+</ion-content>

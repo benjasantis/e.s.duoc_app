@@ -20,6 +20,9 @@ export class DetallePublicPage implements OnInit {
 
   pub: any;
   com: any;
+  preg1:any;
+  pregunta1:any;
+  alert;
   pdf0jb = null;
   
 
@@ -36,6 +39,13 @@ export class DetallePublicPage implements OnInit {
         return res.ID_PUBLIC === JSON.parse(idCurrent);
       });
     });
+    this.api.getPregunta1().subscribe((resultado)=>{
+      let userCurrent = localStorage.getItem('id_public');
+      this.pregunta1 = resultado.filter(function(resultado){
+        return resultado.ID_PUBLICACION === JSON.parse(userCurrent);
+      });
+      console.log(this.pregunta1[0]['ID_PREGUNTA1'])
+    });
   }
 
   volver() {
@@ -47,6 +57,13 @@ export class DetallePublicPage implements OnInit {
       console.log(resultado);
       this.router.navigate(['/mispublic']);
     });
+  }
+
+  quiz(){
+    if(this.pregunta1[0]['ID_PREGUNTA1'] != ""){
+      this.error();
+    }else{this.router.navigate(['/agregar-quiz'])}
+    
   }
 
   pdfDownload(titulo, descripcion, contenido, asignatura) {
@@ -71,6 +88,19 @@ export class DetallePublicPage implements OnInit {
     const pdf = pdfMake.createPdf(generatePDF);
 
     pdf.open();
+  }
+
+  async error() {
+    this.alert = await this.alerta.create({
+     cssClass: 'my-custom-class',
+     header: 'No se puede agregar Quiz',
+     subHeader: 'Esta publicacion ya posee un quiz',
+     
+     buttons: ['Aceptar']
+   });
+  
+   await this.alert.present();
+  
   }
 
 }

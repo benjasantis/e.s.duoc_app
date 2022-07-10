@@ -10,14 +10,18 @@
     float: left;
     width: 25%;
     margin-right: 5%;
-    margin-top: 5%;
+    margin-top: 15%;
     margin-left: 5%;
+    text-align: center;
+} h1{
+    color: yellow;
 }
 .info{
+    padding: 5%;
     float: left;
     width: 60%;
-    margin-right: 5%;
-    background-color: black;
+    margin: 2%;
+    background-color: #145c84;
     color: aliceblue;
 }
 
@@ -29,6 +33,10 @@
     width: 10%;
     filter: drop-shadow(5px 5px 5px hsl(0deg 0% 0% / 0.5));
     cursor: pointer;
+}
+
+.input{
+    color: black;
 }
 
 

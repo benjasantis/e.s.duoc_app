@@ -8,7 +8,13 @@
 <ion-content class="contenido">
 
   
+  
   <ion-card class="card"  >
+    <h1 class="tit"><b>Clasificación de Publicación</b></h1>
+    <div >
+      <h1 class="promedio"><b>{{cla}}</b></h1>
+    </div>
+    
     <div class="info" *ngFor="let p of pub ">
       <p>Usuario: {{p.RUT_USUARIO}}</p>
       <p>Titulo publicacion: {{p.TITULO_PUBLIC}}</p>
@@ -16,6 +22,16 @@
       <P>Contenido: {{p.CONT_PUBLIC}}</P>
       <p>Carrera: {{p.NOMBRE_CARRERA}}</p>
       <p>Asignatura: {{p.NOMBRE_ASIGNATURA}}</p>
+      <ion-button (click)="realizarQuiz()"> Realizar Quiz</ion-button>
+      <div class="nota">
+        <ion-item class="input">
+          <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)] = "nota.CLASIFICACION" placeholder="Ingrese su nota">
+            <ion-select-option *ngFor="let n of notas " >{{n}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-button (click)="calificar()" color="success">Calificar</ion-button>
+      </div>
+      
 
     </div>
 

@@ -1,33 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Comunidad</ion-title>
-    <img slot="end" routerLink="/home" src="assets/img/Home.png" alt="" width="20%" height="20%" class="ion-margin">
+    <img slot="end" routerLink="/home" src="assets/img/Home.png" alt="" width="20%" height="20%" class="ion-margin" />
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-
+<ion-content>
   <div class="boton">
-    <img src="assets/img/actualizar.png" (click)="comunidad()" alt="">
+    <img src="assets/img/actualizar.png" (click)="comunidad()" alt="" />
   </div>
 
-
-  
   <ion-card class="card" *ngFor="let p of pub ">
     <div class="img">
-      <img src="assets/img/LOGIN-DEF.png" alt="">
+      <img src="assets/img/LOGIN-DEF.png" alt="" />
     </div>
     <div class="info">
       <p>Titutlo: {{p.TITULO_PUBLIC}}</p>
       <p>Descripcion: {{p.DESC_PUBLIC}}</p>
       <p>Carrera: {{p.NOMBRE_CARRERA}}</p>
       <p>Asignatura: {{p.NOMBRE_ASIGNATURA}}</p>
+        <ion-button routerLink="/detallecomunidad" size="small" color="dark" (click)="abrirPublic(p.ID_PUBLIC)">Ver
+          Publicacion</ion-button>
     </div>
-    <div class="boton">
-      <ion-button routerLink="/detallecomunidad" size="small" (click)="abrirPublic(p.ID_PUBLIC)" >Ver Publicacion</ion-button>
-    </div>
-    
-
   </ion-card>
-
 </ion-content>

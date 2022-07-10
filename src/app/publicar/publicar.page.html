@@ -19,39 +19,39 @@
   <ion-card class="card">
     <ion-item class="input">
       <ion-label position="floating">Titulo</ion-label>
-      <ion-input [(ngModel)] = "usuario.TITULO_PUBLIC" maxlength="30" minlength="10" placeholder="min 10, max 30 caracteres"></ion-input>
+      <ion-input [(ngModel)] = "usuario.TITULO_PUBLIC" maxlength="30" minlength="10" placeholder="min 10, max 30 caracteres" style="text-transform:uppercase;"></ion-input>
     </ion-item>
 
     <ion-item class="input">
       <ion-label position="floating">Carrera</ion-label>
       <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)] = "usuario.NOMBRE_CARRERA" >
-        <ion-select-option *ngFor="let c of carrera ">{{c.NOMBRE_CARRERA}}</ion-select-option>
+        <ion-select-option *ngFor="let c of carrera " style="text-transform:uppercase;">{{c.NOMBRE_CARRERA}}</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item class="input">
       <ion-label position="floating">Asignatura</ion-label>
       <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)] = "usuario.NOMBRE_ASIGNATURA">
-        <ion-select-option *ngFor="let a of asignatura ">{{a.NOMBRE_ASIGNATURA}}</ion-select-option>
+        <ion-select-option *ngFor="let a of asignatura " style="text-transform:uppercase;">{{a.NOMBRE_ASIGNATURA}}</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item class="input">
       <ion-label position="floating">Sede</ion-label>
       <ion-select okText="Okay" cancelText="Dismiss"  [(ngModel)] = "usuario.NOMBRE_SEDE" >
-      <ion-select-option *ngFor="let s of sede " >{{s.NOMBRE_SEDE}}</ion-select-option>
+      <ion-select-option *ngFor="let s of sede " style="text-transform:uppercase;">{{s.NOMBRE_SEDE}}</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item class="input">
       <ion-label position="floating">Descripcion</ion-label>
       <ion-input [(ngModel)] = "usuario.DESC_PUBLIC"
-        placeholder="min 20, max 50 caracteres" maxlength="50" minlength="20"
+        placeholder="min 20, max 50 caracteres" maxlength="50" minlength="20" style="text-transform:uppercase;"
       ></ion-input>
     </ion-item>
 
     <ion-item class="input">
       <ion-label position="floating">Contenido</ion-label>
       <ion-input  [(ngModel)] = "usuario.CONT_PUBLIC"
-        placeholder="min 30,  max 2000 caracteres" maxlength="2000" minlength="30"
+        placeholder="min 30,  max 2000 caracteres" maxlength="2000" minlength="30" style="text-transform:uppercase;"
       ></ion-input>    
     </ion-item>
 

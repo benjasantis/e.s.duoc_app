@@ -17,7 +17,8 @@
       <div class="borrar">
         <img src="assets/img/borrar.png" (click)="delete(p.ID_PUBLIC)" alt="">
       </div>
-      <ion-button (click)="pdfDownload(p.TITULO_PUBLIC,p.DESC_PUBLIC,p.CONT_PUBLIC,p.NOMBRE_ASIGNATURA)" color="danger" >PDF</ion-button>
+      <ion-button (click)="pdfDownload(p.TITULO_PUBLIC,p.DESC_PUBLIC,p.CONT_PUBLIC,p.NOMBRE_ASIGNATURA)" color="danger" >Exportar PDF</ion-button>
+      <ion-button (click)="quiz()" color="warning"> Agregar Quiz</ion-button>
     </div>
     <div class="comentarios">
       <h1><b>Comentarios</b></h1>

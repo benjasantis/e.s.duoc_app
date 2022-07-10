@@ -93,9 +93,27 @@ const routes: Routes = [
     canActivate: [PermisosGuard]
   },
   {
+    path: 'agregar-quiz',
+    loadChildren: () => import('./agregar-quiz/agregar-quiz.module').then( m => m.AgregarQuizPageModule),
+    canActivate: [PermisosGuard]
+  },
+  {
+    path: 'realizar-quiz',
+    loadChildren: () => import('./realizar-quiz/realizar-quiz.module').then( m => m.RealizarQuizPageModule),
+    
+  },
+  {
+    path: 'resultados',
+    loadChildren: () => import('./resultados/resultados.module').then( m => m.ResultadosPageModule),
+    canActivate: [PermisosGuard]
+  },
+  {
     path:'**',
     redirectTo: 'login'
   },
+  
+  
+  
  
   
   

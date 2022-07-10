@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>realizarQuiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <h1>Realizar Quiz</h1>
+  
+<div class="quiz">
+  <ion-card class="preguntas"> 
+    <section id="p1">
+      <ion-list order="random"  >
+        <ion-radio-group  [(ngModel)]="escogida.escogida" *ngFor="let p1 of pregunta1">
+          <ion-list-header>
+            <ion-label >{{p1.PREGUNTA1}}</ion-label> <!--aqui deberia ser un {{con la pregunta que se listara segun id}}-->
+          </ion-list-header>
+      
+          <ion-item >
+            <ion-label>{{p1.RESPUESTA1}}</ion-label>
+            <ion-radio slot="start" value="{{p1.RESPUESTA1}}" name="p1"></ion-radio> <!--aqui a traves de ngfor deberia acceder a las respuestas disponibles en la base de datos-->
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>{{p1.RESPUESTA2}}</ion-label>
+            <ion-radio slot="start"  value="{{p1.RESPUESTA2}}"name="p1"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>{{p1.RESPUESTA3}}</ion-label>
+            <ion-radio slot="start" value="{{p1.RESPUESTA3}}"  name="p1"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        
+      </ion-list> 
+    </section>
+    <ion-item *ngFor="let p of pregunta1" class="correcta">
+      <ion-input value="{{p.RESPUESTACORRECTA}}" id="rcorrecta"></ion-input>
+    </ion-item>
+    <section id="p2">
+      <ion-list order="random"  >
+        <ion-radio-group  [(ngModel)]="escogida2.escogida" *ngFor="let p2 of pregunta2">
+          <ion-list-header>
+            <ion-label >{{p2.PREGUNTA2}}</ion-label> <!--aqui deberia ser un {{con la pregunta que se listara segun id}}-->
+          </ion-list-header>
+      
+          <ion-item >
+            <ion-label>{{p2.RESPUESTA1}}</ion-label>
+            <ion-radio slot="start" value="{{p2.RESPUESTA1}}" name="p2"></ion-radio> <!--aqui a traves de ngfor deberia acceder a las respuestas disponibles en la base de datos-->
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>{{p2.RESPUESTA2}}</ion-label>
+            <ion-radio slot="start"  value="{{p2.RESPUESTA2}}"name="p2"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>{{p2.RESPUESTA3}}</ion-label>
+            <ion-radio slot="start" value="{{p2.RESPUESTA3}}"  name="p"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        <ion-item *ngFor="let p2 of pregunta2" class="correcta">
+          <ion-input value="{{p2.RESPUESTACORRECTA}}" id="rcorrecta2"></ion-input>
+        </ion-item>
+      </ion-list> 
+    </section>
+    <section id="p3">
+      <ion-list order="random"  >
+        <ion-radio-group  [(ngModel)]="escogida3.escogida" *ngFor="let p3 of pregunta3">
+          <ion-list-header>
+            <ion-label >{{p3.PREGUNTA3}}</ion-label> <!--aqui deberia ser un {{con la pregunta que se listara segun id}}-->
+          </ion-list-header>
+      
+          <ion-item >
+            <ion-label>{{p3.RESPUESTA1}}</ion-label>
+            <ion-radio slot="start" value="{{p3.RESPUESTA1}}" name="p3"></ion-radio> <!--aqui a traves de ngfor deberia acceder a las respuestas disponibles en la base de datos-->
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>{{p3.RESPUESTA2}}</ion-label>
+            <ion-radio slot="start"  value="{{p3.RESPUESTA2}}"name="p3"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>{{p3.RESPUESTA3}}</ion-label>
+            <ion-radio slot="start" value="{{p3.RESPUESTA3}}"  name="p3"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        <ion-item *ngFor="let p3 of pregunta3" class="correcta">
+          <ion-input value="{{p3.RESPUESTACORRECTA}}" id="rcorrecta3"></ion-input>
+        </ion-item>
+      </ion-list> 
+    </section>
+  </ion-card>
+
+  <ion-button (click)="corregir()">Terminar Quiz</ion-button>
+  </div>
+
+</ion-content>

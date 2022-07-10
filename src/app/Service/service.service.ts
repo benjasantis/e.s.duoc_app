@@ -191,6 +191,7 @@ export class ServiceService {
 
   salirPublicacion(){
     localStorage.removeItem('id_public');
+    localStorage.removeItem('nota');
   }
   
   //listar informacion personal
@@ -299,5 +300,69 @@ export class ServiceService {
     } )
   }
 
+  //LISTAR PREGUNTAS.
+
+  getPregunta1(): Observable<any>
+  {
+    return this.http.get(this.apiBase+"verpregunta1").pipe();
+
+  }
+  getPregunta2(): Observable<any>
+  {
+    return this.http.get(this.apiBase+"verpregunta2").pipe();
+
+  }
+  getPregunta3(): Observable<any>
+  {
+    return this.http.get(this.apiBase+"verpregunta3").pipe();
+
+  }
+
+  //AGREGAR PREGUNTAS
+
+  agregarPregunta1(PREGUNTA1, RESPUESTA1, RESPUESTA2, RESPUESTA3, RESPUESTACORRECTA, ID_PUBLICACION) {
+    return this.http.post(this.apiBase + 'agregarpregunta1', { 
+        "PREGUNTA1":PREGUNTA1,
+        "RESPUESTA1":RESPUESTA1,
+        "RESPUESTA2":RESPUESTA2,
+        "RESPUESTA3": RESPUESTA3,
+        "RESPUESTACORRECTA":RESPUESTACORRECTA,
+        "ID_PUBLICACION": ID_PUBLICACION})
+    
+  }
+  agregarPregunta2(PREGUNTA2, RESPUESTA1, RESPUESTA2, RESPUESTA3, RESPUESTACORRECTA, ID_PUBLICACION) {
+    return this.http.post(this.apiBase + 'agregarpregunta2', { 
+        "PREGUNTA2":PREGUNTA2,
+        "RESPUESTA1":RESPUESTA1,
+        "RESPUESTA2":RESPUESTA2,
+        "RESPUESTA3": RESPUESTA3,
+        "RESPUESTACORRECTA":RESPUESTACORRECTA,
+        "ID_PUBLICACION": ID_PUBLICACION})
+    
+  }
+  agregarPregunta3(PREGUNTA3, RESPUESTA1, RESPUESTA2, RESPUESTA3, RESPUESTACORRECTA, ID_PUBLICACION) {
+    return this.http.post(this.apiBase + 'agregarpregunta3', { 
+        "PREGUNTA3":PREGUNTA3,
+        "RESPUESTA1":RESPUESTA1,
+        "RESPUESTA2":RESPUESTA2,
+        "RESPUESTA3": RESPUESTA3,
+        "RESPUESTACORRECTA":RESPUESTACORRECTA,
+        "ID_PUBLICACION": ID_PUBLICACION})
+    
+  }
+
+   
+  agregarNota(CLASIFICACION, ID_PUBLICACION){
+    return this.http.post(this.apiBase + 'agregarNota', { 
+    "CLASIFICACION":CLASIFICACION,
+    "ID_PUBLICACION": ID_PUBLICACION})
+
+  }
+
+  obtenerNota(ID_PUBLICACION){
+    return this.http.post(this.apiBase + 'clasificacion', { 
+    "ID_PUBLICACION": ID_PUBLICACION})
+
+  }
   
 }

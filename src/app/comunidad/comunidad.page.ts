@@ -17,8 +17,9 @@ export class ComunidadPage implements OnInit {
     this.api.listarPublicaciones().subscribe((resultado)=>{
       this.pub = resultado;
     })
-      
+  
     }
+
 
   pub:any;
 
@@ -35,16 +36,12 @@ export class ComunidadPage implements OnInit {
 
       this.api.miPublic(ID_PUBLIC).subscribe((res) =>{
   
-        if(res['id']){
-          let id:any=res['ID_PUBLIC'];
-          this.api.setIdPublicacion(id);
+        
+          this.api.setIdPublicacion(res['ID_PUBLIC']);
           this.router.navigate(['/detallecomunidad'])
-        }else{
-          this.error("");
-         
-        }
-      })
-    }
+          
+    })}
+    
   
     alert;
   
